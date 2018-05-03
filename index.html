@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <title>MusJongg</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+  <script src="game.js"></script>
+  <script src="musicPlayer.js"></script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div class="topContainer">
+    <h1>MusJongg</h1>
+    <div class="contentContainer">
+      <div class="gameContainer">
+        <div class="gameStateContainer">
+          <div class="modesContainer">
+            <button>2x2</button>
+            <button>3x3</button>
+            <button>4x4</button>
+            <button>Custom</button>
+          </div>
+          <div id="gameStateRoot">Something's happening...</div>
+        </div>
+        <div class="tilesContainer">
+          <div id="tilesRoot"></div>
+        </div>
+      </div>
+
+      <div class="playerContainer">
+        <div id="playerRoot"></div>
+        <div id="playlistRoot"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

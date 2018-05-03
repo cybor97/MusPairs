@@ -1,0 +1,118 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+div.topContainer {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: #eeeeee 0px 0px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.topContainer>h1 {
+    margin: 5px 0px 10px 0px;
+}
+
+div.contentContainer {
+    display: flex;
+    width: 100%;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+    transition: all linear 0.1s;
+    padding: 5px 10px;
+}
+
+button:hover {
+    box-shadow: #00ee00 0px 0px 5px;
+}
+
+button:active {
+    background-color: #00ee00;
+}
+
+.gameContainer {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.gameContainer>.gameStateContainer {
+    background: orange;
+    height: 50px;
+    padding:0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameContainer>.tilesContainer {
+    height: calc(100% - 50px);
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot {
+    width: 100%;
+    height: 100%;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>a {
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:background ease 0.3s;
+    font-size:16pt;
+    font-weight:bold;
+    border:2px solid gray;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>a:hover {
+    background: red;
+}
+
+.playerContainer {
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.playerContainer>#playerRoot {
+    background-color: green;
+    width: 100%;
+    height: 50px;
+}
+
+.playerContainer>#playlistRoot {
+    background-color: blue;
+    width: 100%;
+    height: calc(100% - 50px);
+}
