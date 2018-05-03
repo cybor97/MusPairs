@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>MusJongg</title>
+  <title>MusPairs</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -14,17 +14,22 @@
 
 <body>
   <div class="topContainer">
-    <h1>MusJongg</h1>
+    <h1>MusPairs</h1>
     <div class="contentContainer">
       <div class="gameContainer">
         <div class="gameStateContainer">
           <div class="modesContainer">
-            <button>2x2</button>
-            <button>3x3</button>
-            <button>4x4</button>
-            <button>Custom</button>
+            <button onclick="initGame(2,this)">2x2</button>
+            <button onclick="initGame(4,this)" class="active">4x4</button>
+            <button onclick="initGame(6,this)">6x6</button>
+            <button onclick="initGame(null, this)">Reset</button>
           </div>
-          <div id="gameStateRoot">Something's happening...</div>
+          <div id="gameStateRoot"></div>
+        </div>
+        <div class="winContainer">
+          <h1>Awesome!</h1>
+          <p>You won! How about to retry?</p>
+          <button class="bigButton" onclick="initGame()">Retry</button>
         </div>
         <div class="tilesContainer">
           <div id="tilesRoot"></div>

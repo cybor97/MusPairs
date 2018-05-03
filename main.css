@@ -32,19 +32,25 @@ div.contentContainer {
 button {
     background-color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px 5px 0px 5px;
     outline: none;
     margin-right: 10px;
     transition: all linear 0.1s;
     padding: 5px 10px;
 }
 
+button.bigButton {
+    padding: 15px 30px;
+}
+
 button:hover {
     box-shadow: #00ee00 0px 0px 5px;
 }
 
-button:active {
+button:active,
+button.active {
     background-color: #00ee00;
+    color: white;
 }
 
 .gameContainer {
@@ -55,10 +61,21 @@ button:active {
     justify-content: flex-start;
 }
 
+.gameContainer .winContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+}
+
+.gameContainer .winContainer.active {
+    display: flex;
+}
+
 .gameContainer>.gameStateContainer {
-    background: orange;
     height: 50px;
-    padding:0px 10px;
+    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,10 +83,16 @@ button:active {
 
 .gameContainer>.tilesContainer {
     height: calc(100% - 50px);
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5px;
+    background: whitesmoke;
+    border-radius: 5px;
+}
+
+.winContainer.active+.tilesContainer {
+    display: none;
 }
 
 .gameContainer>.tilesContainer>#tilesRoot {
@@ -80,22 +103,46 @@ button:active {
 .gameContainer>.tilesContainer>#tilesRoot>.tilesContent {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
     height: 100%;
 }
 
-.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>a {
-    background: whitesmoke;
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>div {
+    margin: 2px;
+    background: white;
+    box-shadow: #00ee00 0px 0px 5px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition:background ease 0.3s;
-    font-size:16pt;
-    font-weight:bold;
-    border:2px solid gray;
+    transition: background ease 0.3s;
+    font-size: 32pt;
+    font-weight: bold;
 }
 
-.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>a:hover {
-    background: red;
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>div>div {
+    opacity: 0;
+    transition: opacity ease 0.3s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>div.active {
+    background: #00ee00;
+    color: white;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>div.destroyed {
+    opacity: 0;
+}
+
+.gameContainer>.tilesContainer>#tilesRoot>.tilesContent>div.active>div {
+    opacity: 1;
 }
 
 .playerContainer {
@@ -106,13 +153,11 @@ button:active {
 }
 
 .playerContainer>#playerRoot {
-    background-color: green;
     width: 100%;
     height: 50px;
 }
 
 .playerContainer>#playlistRoot {
-    background-color: blue;
     width: 100%;
     height: calc(100% - 50px);
 }
