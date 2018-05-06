@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 <head>
   <title>MusPairs</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -19,10 +19,10 @@
       <div class="gameContainer">
         <div class="gameStateContainer">
           <div class="modesContainer">
-            <button onclick="initGame(2,this)">2x2</button>
-            <button onclick="initGame(4,this)" class="active">4x4</button>
-            <button onclick="initGame(6,this)">6x6</button>
-            <button onclick="initGame(null, this)">Reset</button>
+            <button onclick="initGame(2,event.target)">2x2</button>
+            <button onclick="initGame(4,event.target)" class="active">4x4</button>
+            <button onclick="initGame(6,event.target)">6x6</button>
+            <button onclick="initGame()">Reset</button>
           </div>
           <div id="gameStateRoot"></div>
         </div>
@@ -37,11 +37,13 @@
       </div>
 
       <div class="playerContainer">
+        <audio id="playerEngine"></audio>
         <div id="playerRoot"></div>
         <div id="playlistRoot"></div>
       </div>
     </div>
   </div>
+  <script>initGame(); initPlayer();</script>
 </body>
 
 </html>

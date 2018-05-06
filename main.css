@@ -6,6 +6,11 @@ body {
     display: flex;
     align-items: center;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: #474747;
+    font-family: "Helvetica"
 }
 
 div.topContainer {
@@ -14,6 +19,7 @@ div.topContainer {
     border-radius: 5px;
     box-shadow: #eeeeee 0px 0px 20px;
     width: 100%;
+    height: calc(100% - 60px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,10 +32,13 @@ div.topContainer>h1 {
 
 div.contentContainer {
     display: flex;
+    flex-grow: 1;
+    max-height: 100%;
     width: 100%;
 }
 
-button {
+button,
+.button {
     background-color: #fff;
     border: none;
     border-radius: 0px 5px 0px 5px;
@@ -37,28 +46,34 @@ button {
     margin-right: 10px;
     transition: all linear 0.1s;
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 button.bigButton {
     padding: 15px 30px;
 }
 
-button:hover {
+button:hover,
+.button:hover {
     box-shadow: #00ee00 0px 0px 5px;
 }
 
 button:active,
-button.active {
+button.active,
+.button:active,
+.button.active {
     background-color: #00ee00;
     color: white;
 }
 
 .gameContainer {
     width: 70%;
-    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-right: 10px;
+    border-right: whitesmoke solid 1px;
+
 }
 
 .gameContainer .winContainer {
@@ -66,7 +81,7 @@ button.active {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height:100%;
+    height: 100%;
 }
 
 .gameContainer .winContainer.active {
@@ -148,16 +163,130 @@ button.active {
 .playerContainer {
     width: 30%;
     height: 80%;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.playerContainer>audio#playerEngine {
+    display: none;
 }
 
 .playerContainer>#playerRoot {
     width: 100%;
     height: 50px;
+    vertical-align: middle;
 }
 
 .playerContainer>#playlistRoot {
     width: 100%;
     height: calc(100% - 50px);
+}
+
+.playerComponent {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: whitesmoke solid 1px;
+}
+
+.playerComponent>.timeline {
+    flex-grow: 1;
+}
+
+.playerComponent>.volume {
+    min-width: 50px;
+    margin-left: 5px;
+}
+
+.playerComponent>.volume,
+.playerComponent>.timeline {
+    display: flex;
+    align-items: center;
+}
+
+.playerComponent>.volume>.volumeLine,
+.playerComponent>.timeline>.timelineLine {
+    background:whitesmoke;
+    box-shadow:inset #eee 2px 2px 2px;
+    height:10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.playerComponent>.buttonsPanel {
+    display: flex;
+    align-items: center;
+}
+
+.playerComponent>.buttonsPanel>.button::after {
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 15px;
+    min-width: 15px;
+}
+
+.playerComponent>.buttonsPanel>.button {
+    padding: 3px;
+}
+
+.playerComponent>.buttonsPanel>.button.playButton::after {
+    background-image: url('img/play.svg');
+}
+
+.playerComponent>.buttonsPanel>.button.button.pauseButton{
+    display: none;
+}
+
+.playerComponent.playing>.buttonsPanel>.button.button.pauseButton{
+    display: block;
+}
+
+.playerComponent.playing>.buttonsPanel>.button.button.playButton{
+    display: none;
+}
+
+.playerComponent>.buttonsPanel>.button.pauseButton::after {
+    background-image: url('img/pause.svg')
+}
+
+.playerComponent>.buttonsPanel>.button.prevButton::after {
+    background-image: url('img/prev.svg')
+}
+
+.playerComponent>.buttonsPanel>.button.nextButton::after {
+    background-image: url('img/next.svg')
+}
+
+#playlistRoot ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#playlistRoot ul>li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    border-radius: 5px;
+    transition:all linear 0.1s;
+    cursor: pointer;
+}
+
+#playlistRoot ul>li:hover{
+    background-color:whitesmoke;
+    padding: 5px 2px;
+}
+
+input.searchInput{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:5px;
+    margin-bottom: 5px;
+    border-radius:5px;
+    font-size: 12pt;
+    box-shadow:inset #eee 2px 2px 5px;
 }

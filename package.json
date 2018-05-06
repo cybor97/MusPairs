@@ -1,0 +1,24 @@
+{
+    "name": "muspairs",
+    "displayName": "MusPairs",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "babel src -d ."
+    },
+    "babel": {
+        "plugins": [
+            "transform-react-jsx"
+        ],
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.0.0-beta.46",
+        "@babel/preset-env": "^7.0.0-beta.46"
+    },
+    "dependencies": {
+        "@babel/core": "^7.0.0-beta.46",
+        "babel-plugin-transform-react-jsx": "^6.24.1"
+    }
+}

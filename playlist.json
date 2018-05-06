@@ -1,0 +1,54 @@
+{
+    "name": "Electronic music",
+    "description": "Awesome for coding",
+    "tracks": [
+        {
+            "artistName": "PEPPY & THE FIRING SQUAD",
+            "trackName": "Y=MX+B",
+            "duration": "3:22",
+            "url": "http://sampleswap.org/mp3/artist/5101/Peppy--The-Firing-Squad_YMXB-160.mp3"
+        },
+        {
+            "artistName": "BELA.BAR",
+            "trackName": "Sunny9",
+            "duration": "4:17",
+            "url": "http://sampleswap.org/mp3/artist/20409/belabar_Sunny9-160.mp3"
+        },
+        {
+            "artistName": "SEED A.I.",
+            "trackName": "2D",
+            "duration": "5:33",
+            "url": "http://sampleswap.org/mp3/artist/6536/Seed-AI_2D-160.mp3"
+        },
+        {
+            "artistName": "AUDIOPHYLA",
+            "trackName": "valve",
+            "duration": "6:14",
+            "url": "http://sampleswap.org/mp3/artist/37080/audiophyla_valve-160.mp3"
+        },
+        {
+            "artistName": "STEVE",
+            "trackName": "counting sheep-01",
+            "duration": "3:42",
+            "url": "http://sampleswap.org/mp3/artist/2590/steve_counting-sheep-01-160.mp3"
+        },
+        {
+            "artistName": "CANTON",
+            "trackName": "Benbient",
+            "duration": "7:42",
+            "url": "http://sampleswap.org/mp3/artist/5101/Peppy--The-Firing-Squad_YMXB-160.mp3"
+        },
+        {
+            "artistName": "TYLERSREVENGE",
+            "trackName": "untitled",
+            "duration": "4:29",
+            "url": "http://sampleswap.org/mp3/artist/2/canton_Benbient-160.mp3"
+        },
+        {
+            "artistName": "SLYDE",
+            "trackName": "Sumthang",
+            "duration": "5:15",
+            "url": "http://sampleswap.org/mp3/artist/47459/tylersrevenge_untitled-160.mp3"
+        }
+    ]
+}
